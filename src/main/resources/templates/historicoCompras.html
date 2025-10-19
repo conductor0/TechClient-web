@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Procurar produto</title>
+        <link rel="stylesheet" href="/css/historicoCompras.css"/>
+    </head>
+    <body>
+        <br>
+        <br>
+        <br>
+        <div class="tabela">    
+            <table style ="display: inline-block; height: 700px;" class="tabela1">
+                <tr class="legenda">
+                    <th>vendas_id</th>
+                    <th>data_realizada</th>
+                    <th>quantidade</th>
+                    <th>cliente_id</th>
+                    <th>produto_id</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1/1/2015</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>     
+            </table>
+            <table style ="display: block; height: 700px; float: right;" class="tabela2">
+                <tr class="legenda">
+                    <th>clientes_id</th>
+                    <th>nome</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1/1/2015</td>
+                </tr>     
+            </table>
+            </div>
+            <br>
+            <div class="form">
+            <form>
+                <div>
+                    <label for="pesquisar" class="pesqCompra"> Pesquisar Cliente id </label>
+                    <input type="text" name="pesquisar" id="pesquisar">
+                    <label for="pesquisar" class="pesqCliente"style="position: relative; margin-left: 2.3%;"></label>
+                    <input type="text" name="pesquisar" id="pesquisar">
+                </div>
+                <br>
+                <input class="buttons" type="button" onclick="location.href='telaPrincipal.html';" value="Voltar" style="float: right;"/>
+                <br>
+                <br>
+                <br>
+                <br>
+            </form>
+        </div>
+    </body>
+</html>

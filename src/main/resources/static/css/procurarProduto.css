@@ -1,0 +1,80 @@
+body{
+    background: grey;
+    min-height: 100vh;
+}
+.legenda {
+    position: sticky;
+    top: 0;  
+}
+.tabela {
+    text-align: center;
+    height: 800px;
+    overflow: auto;
+}
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #fff;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px 16px;
+    text-align: left;
+    max-width: 280px;
+}
+td
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+th {
+    background: #f3f4f6;
+    font-weight: bold;
+    width: 280px;
+}
+tr:nth-child(even) {
+    background: #f3f4f6;
+}
+tr:nth-child(odd) {
+    background: #fff;
+}
+
+h1 {
+    margin-bottom: 24px;
+}
+form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+label,
+input {
+  display: inline-block;
+}
+
+label {
+  text-align: right;
+  font-size: xx-large;
+}
+
+label+input {
+  font-size: xx-large;
+  width: 50%;
+  margin: 2.5px;
+}
+
+.buttons {
+  background-color: #4228b6;
+  width: 300px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  }

@@ -1,0 +1,52 @@
+body {
+    background: grey;
+}
+
+.form {
+  position: relative;
+  padding: 50px;
+  width: 460px;
+  min-height: 680px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  margin: 65px auto;
+}
+
+label,
+input {
+  display: inline-block;
+}
+
+label {
+  text-align: right;
+}
+
+label+input {
+  font-size: x-large;
+  margin: 2.5px;
+  width: 400px;
+  padding: 10px;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {
+  background-color: #4228b6;
+  width: 420px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  }
