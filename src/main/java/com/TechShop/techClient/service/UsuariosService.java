@@ -4,10 +4,19 @@
  */
 package com.TechShop.techClient.service;
 
-/**
- *
- * @author conductor
- */
+import com.TechShop.techClient.data.usuariosEntity;
+import com.TechShop.techClient.repository.UsuariosRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class UsuariosService {
+    @Autowired
+    UsuariosRepository usuariosRepository;
     
+    public usuariosEntity registrarCliente(usuariosEntity usuarios) {
+        usuarios.setUsuario_id(null);
+        usuariosRepository.save(usuarios);
+        return usuarios;
+    }
 }

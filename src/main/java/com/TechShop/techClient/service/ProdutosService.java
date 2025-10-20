@@ -4,10 +4,18 @@
  */
 package com.TechShop.techClient.service;
 
-/**
- *
- * @author conductor
- */
+import com.TechShop.techClient.data.produtosEntity;
+import com.TechShop.techClient.repository.ProdutosRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
 public class ProdutosService {
+    @Autowired
+    ProdutosRepository produtosRepository;
     
+    public List<produtosEntity> listarProdutos () {
+        return produtosRepository.findAll();
+    }
 }

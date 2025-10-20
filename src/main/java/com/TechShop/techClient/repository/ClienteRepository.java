@@ -7,6 +7,5 @@ package com.TechShop.techClient.repository;
 import com.TechShop.techClient.data.clienteEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ClienteRepositoy extends JpaRepository<clienteEntity, Integer> {
-    
+public interface ClienteRepository extends JpaRepository<clienteEntity, Integer> {
 }

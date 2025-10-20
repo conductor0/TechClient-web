@@ -4,10 +4,18 @@
  */
 package com.TechShop.techClient.service;
 
-/**
- *
- * @author conductor
- */
+import com.TechShop.techClient.data.vendasEntity;
+import com.TechShop.techClient.repository.VendasRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
 public class VendasService {
+    @Autowired
+    VendasRepository vendasRepository;
     
+    public List<vendasEntity> listarProdutos () {
+        return vendasRepository.findAll();
+    }
 }
