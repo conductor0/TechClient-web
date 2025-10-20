@@ -4,10 +4,61 @@
  */
 package com.TechShop.techClient.model;
 
-/**
- *
- * @author conductor
- */
+
 public class produtos {
+    private int produtos_id;
+    private String nome_produto;
+    private String quantidade;
+    private String valor;
+    private String marca;
+
+    public produtos(int produtos_id, String nome_produto, String quantidade, String valor, String marca) {
+        this.produtos_id = produtos_id;
+        this.nome_produto = nome_produto;
+        this.quantidade = quantidade;
+        this.valor = valor;
+        this.marca = marca;
+    }
+        
+    public int getProdutos_id() {
+        return produtos_id;
+    }
+
+    public void setProdutos_id(int produtos_id) {
+        this.produtos_id = produtos_id;
+    }
+
+    public String getNome_produto() {
+        return nome_produto;
+    }
+
+    public void setNome_produto(String nome_produto) {
+        this.nome_produto = nome_produto;
+    }
+
+    public String getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(String quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+    
     
 }
