@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Tela Principal</title>
     <link rel="stylesheet" type="text/css" href="css/telaPrincipal.css">
   </head>
   <body>
     <div class="form">
-    <img src="246x246.png" style="position: absolute; right: 1100px; width: 600px;">
+    <img  th:src="@{/images/246x246.png}" style="position: absolute; right: 1100px; width: 600px;">
      <form>
         <div style="text-align: center;">
           <input class="buttons" type="button" onclick="location.href='cadastroCliente.html';" value="Cadastro Cliente" />
