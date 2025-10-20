@@ -4,10 +4,32 @@
  */
 package com.TechShop.techClient.controller;
 
-/**
- *
- * @author conductor
- */
+
+import com.TechShop.techClient.service.ClienteService;
+import com.TechShop.techClient.service.ProdutosService;
+import com.TechShop.techClient.service.UsuariosService;
+import com.TechShop.techClient.service.VendasService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import java.util.List;
+
+@Controller
 public class miscController {
+    @Autowired
+    private ClienteService clienteService;
+    @Autowired
+    private UsuariosService usuariosService;
+    @Autowired
+    private VendasService vendasService;
+    @Autowired
+    private ProdutosService produtosService;
+    
+    @GetMapping("navegar/telaPrincipal")
+    public String telaPrincipal () {
+        return "telaPrincipal";
+    }
     
 }

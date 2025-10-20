@@ -19,7 +19,7 @@
         </div>
         <br>
         <div style="text-align: center;">
-          <input class="buttons" type="button" onclick="location.href='telaPrincipal.html';" value="Entrar" />
+          <input class="buttons" type="button" th:onclick="'window.location.href=\'' + @{/navegar/telaPrincipal} + '\''" value="Entrar" />
         </div>
         </div>
      </form>
