@@ -4,10 +4,8 @@
  */
 package com.TechShop.techClient.repository;
 
-/**
- *
- * @author conductor
- */
-public class UsuariosRepository {
-    
+import com.TechShop.techClient.data.usuariosEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UsuariosRepository extends JpaRepository<usuariosEntity, Integer> {
 }
