@@ -4,10 +4,16 @@
  */
 package com.TechShop.techClient.data;
 
-/**
- *
- * @author conductor
- */
+import jakarta.persistence.*;
+import lombok.Data; 
+@Data 
+@Entity 
+@Table(name="vendas") 
 public class vendasEntity {
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer vendas_id;
+    private String data_realizada;
+    private Integer cliente_id;
+    private Integer produto_id;
 }

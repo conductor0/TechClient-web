@@ -4,10 +4,15 @@
  */
 package com.TechShop.techClient.data;
 
-/**
- *
- * @author conductor
- */
+import jakarta.persistence.*;
+import lombok.Data; 
+@Data 
+@Entity 
+@Table(name="usuario") 
 public class usuariosEntity {
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer usuario_id;
+    private String login;
+    private String senha;
 }
