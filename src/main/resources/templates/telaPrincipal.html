@@ -9,16 +9,16 @@
     <img  th:src="@{/images/246x246.png}" style="position: absolute; right: 1100px; width: 600px;">
      <form>
         <div style="text-align: center;">
-          <input class="buttons" type="button" onclick="location.href='cadastroCliente.html';" value="Cadastro Cliente" />
+           <input class="buttons" type="button" th:onclick="'window.location.href=\'' + @{/cadastrar/Cliente} + '\''" value="Cadastro Cliente" />
         </div>
         <div style="text-align: center;">
-          <input class="buttons" type="button" onclick="location.href='historicoCompras.html';" value="historico de Compras" />
+          <input class="buttons" type="button" th:onclick="'window.location.href=\'' + @{/procurar/historico} + '\''" value="Historico de Compras" />
         </div>
         <div style="text-align: center;">
-          <input class="buttons" type="button" onclick="location.href='procurarProduto.html';" value="procurar Produto" />
+          <input class="buttons" type="button" th:onclick="'window.location.href=\'' + @{/procurar/produto} + '\''" value="procurar Produto" />
         </div>
         <div style="text-align: center;">
-          <input class="buttons" type="button" onclick="location.href='autenticacao.html';" value="Cadastro de Usúarios" />
+          <input class="buttons" type="button" th:onclick="'window.location.href=\'' + @{/cadastrar/usuario} + '\''" value="Cadastro de Usúarios" />
         </div>
         </div>
      </form>

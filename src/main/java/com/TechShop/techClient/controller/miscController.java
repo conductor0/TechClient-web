@@ -5,6 +5,10 @@
 package com.TechShop.techClient.controller;
 
 
+import com.TechShop.techClient.data.clienteEntity;
+import com.TechShop.techClient.data.produtosEntity;
+import com.TechShop.techClient.data.usuariosEntity;
+import com.TechShop.techClient.data.vendasEntity;
 import com.TechShop.techClient.service.ClienteService;
 import com.TechShop.techClient.service.ProdutosService;
 import com.TechShop.techClient.service.UsuariosService;
@@ -32,4 +36,28 @@ public class miscController {
         return "telaPrincipal";
     }
     
+    @GetMapping("cadastrar/usuario")
+    public String cadastrarUsuario(Model model){
+        model.addAttribute("usuario", new usuariosEntity());
+        return "cadastroUsuario";
+    }
+    
+    @GetMapping("cadastrar/Cliente")
+    public String cadastrarCliente(Model model){
+    model.addAttribute("cliente", new clienteEntity());
+    return "cadastroCliente";
+    }
+    
+    @GetMapping("procurar/produto")
+    public String listarProdutos(Model model){
+        List<produtosEntity> produtos = produtosService.listarProdutos();
+        model.addAttribute("produtos", produtos);
+        return "procurarProduto";
+    }
+    
+    //placeholder. adicionar funcionalidade no futuro
+    @GetMapping("procurar/historico")
+    public String procurarHistorico() {
+        return "historicoCompras";
+    }
 }
