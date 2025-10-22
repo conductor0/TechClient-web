@@ -17,12 +17,12 @@
                     <th>valor</th>
                     <th>marca</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>nome</td>
-                    <td>quantidade</td>
-                    <td>50 R$</td>
-                    <td>marca</td>
+                <tr th:each="produtos : ${produtos}">
+                    <td th:text="${produtos.produtos_id}" >id<</td>
+                    <td th:text="${produtos.nome_produto}" >nome_produto<</td>
+                    <td th:text="${produtos.quantidade}" >quantidade<</td>
+                    <td th:text="${produtos.valor}" >valor<</td>
+                    <td th:text="${produtos.marca}" >marca<</td>
                 </tr>     
             </table>
             </div>
@@ -32,7 +32,7 @@
                 <div>
                     <label for="pesquisar" style="margin-left: 7%;"> Pesquisar nome do produto </label>
                     <input type="text" name="pesquisar" id="pesquisar">
-                    <input class="buttons" type="button" onclick="location.href='telaPrincipal.html';" value="Voltar" />
+                    <input class="buttons" type="button" th:onclick="'window.location.href=\'' + @{/navegar/telaPrincipal} + '\''" value="Voltar" />
                 </div>
             </form>
         </div>
