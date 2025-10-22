@@ -14,7 +14,7 @@ public class UsuariosService {
     @Autowired
     UsuariosRepository usuariosRepository;
     
-    public usuariosEntity registrarCliente(usuariosEntity usuarios) {
+    public usuariosEntity registrarUsuario(usuariosEntity usuarios) {
         usuarios.setUsuario_id(null);
         usuariosRepository.save(usuarios);
         return usuarios;

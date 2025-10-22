@@ -6,23 +6,23 @@
   </head>
   <body>
     <div class="form">
-     <form>
+     <form th:action="@{/usuarios/adicionar}" th:object="${usuario}" method="POST">
         <h1 style="text-align: center;"> Registrar Novo Usuário</h1>
         <div>
           <label for="login">  </label>
-          <input type="text" name="login" id="login" placeholder="Login">
+          <input type="text" th:field="*{login}" id="login" placeholder="Login">
         </div>
         <div>
           <label for="senha">  </label>
-          <input type="password" name="senha" id="senha" placeholder="Senha">
+          <input type="password" th:field="*{senha}" id="senha" placeholder="Senha">
         </div>
         <br>
         <div style="text-align: center;">
-          <input class="buttons" type="button" onclick="location.href='telaPrincipal.html';" value="Registrar" />
+          <input class="buttons" type="submit" th:onclick="'window.location.href=\'' + @{/navegar/telaPrincipal} + '\''" value="Registrar" />
         </div>
         <br>
         <br>
-        <input class="buttons" type="button" onclick="location.href='telaPrincipal.html';" value="Voltar" />
+        <input class="buttons" type="button" th:onclick="'window.location.href=\'' + @{/navegar/telaPrincipal} + '\''" value="Voltar" />
         </div>
      </form>
   </body>
