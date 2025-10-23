@@ -1,5 +1,6 @@
 body{
-    background: grey;
+    background-image: url('/images/background.png');
+    background-size: cover;
     min-height: 100vh;
 }
 .legenda {
