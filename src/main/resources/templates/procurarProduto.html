@@ -9,7 +9,7 @@
         <br>
         <br>
         <div class="tabela">       
-            <table style="display: inline-block ;height: 700px;">
+            <table style="display: inline-block ;height: 700px;" id="produtosTable">
                 <tr class="legenda">
                     <th>produtos_id</th>
                     <th>nome_produto</th>
@@ -28,7 +28,7 @@
             </div>
             <br>
             <div class="form">
-            <form>
+            <form onsubmit="return false;">
                 <div>
                     <label for="pesquisar" style="margin-left: 7%;"> Pesquisar nome do produto </label>
                     <input type="text" name="pesquisar" id="pesquisar">
@@ -36,5 +36,23 @@
                 </div>
             </form>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const input = document.getElementById('pesquisar');
+                const table = document.getElementById('produtosTable');
+                if (!table) return;
+                const tbody = table.tBodies[0];
+                const rows = Array.from(table.querySelectorAll('tr')).slice(1);
+
+                input.addEventListener('input', function() {
+                    const filter = input.value.trim().toLowerCase();
+                    rows.forEach(row => {
+                        const nomeCell = row.cells[1];
+                        const text = nomeCell ? nomeCell.textContent.trim().toLowerCase() : '';
+                        row.style.display = text.includes(filter) ? '' : 'none';
+                    });
+                });
+            });
+        </script>
     </body>
 </html>

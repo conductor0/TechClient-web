@@ -10,7 +10,7 @@
         <br>
         <br>
         <div class="tabela">    
-            <table class="tabela1">
+            <table class="tabela1" id="vendasTable">
                 <tr class="legenda">
                     <th>vendas_id</th>
                     <th>data_realizada</th>
@@ -24,7 +24,7 @@
                     <td th:text="${vendas.produto_id}" >produtos_id<</td>
                 </tr>     
             </table>
-            <table  class="tabela2">
+            <table  class="tabela2" id="clienteTable">
                 <tr class="legenda">
                     <th>clientes_id</th>
                     <th>nome</th>
@@ -37,13 +37,13 @@
             </div>
             <br>
             <div class="form">
-            <form>
+                <form onsubmit="return false;">
                 <div>
                     <br>
-                    <label for="pesquisar" class="pesqCompra"> Pesquisar Cliente id </label>
-                    <input type="text" name="pesquisar" id="pesquisar" placeholder="cliente_id">
-                    <label for="pesquisar" class="pesqCliente"style="position: relative; margin-left: 3.3%;"></label>
-                    <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar nome de cliente">
+                    <label for="pesqCompra" class="pesqCompra"> Pesquisar Cliente id </label>
+                    <input type="text" name="pesqCompra" id="pesqCompra" placeholder="cliente_id">
+                    <label for="pesqCliente" class="pesqCliente"style="position: relative; margin-left: 3.3%;"></label>
+                    <input type="text" name="pesqCliente" id="pesqCliente" placeholder="Pesquisar nome de cliente">
                 </div>
                 <br>
                 <input style="float:right;"class="buttons" type="button" th:onclick="'window.location.href=\'' + @{/navegar/telaPrincipal} + '\''" value="Voltar" />
@@ -53,5 +53,32 @@
                 <br>
             </form>
         </div>
+                <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const compraInput = document.getElementById('pesqCompra');
+                const clienteInput = document.getElementById('pesqCliente');
+                const vendasTable = document.getElementById('vendasTable');
+                const clienteTable = document.getElementById('clienteTable');
+
+                function bindFilter(inputEl, tableEl, columnIndex) {
+                    if (!inputEl || !tableEl) return;
+                    const rows = Array.from(tableEl.querySelectorAll('tr')).filter(r => r.querySelectorAll('td').length > 0);
+                    inputEl.addEventListener('input', function() {
+                        const filter = inputEl.value.trim().toLowerCase();
+                        rows.forEach(row => {
+                            const cell = row.cells[columnIndex];
+                            const text = cell ? cell.textContent.trim().toLowerCase() : '';
+                            row.style.display = text.includes(filter) ? '' : 'none';
+                        });
+                    });
+                }
+
+                // vendas: filter by cliente_id (3rd column -> index 2)
+                bindFilter(compraInput, vendasTable, 2);
+
+                // cliente: filter by nome (2nd column -> index 1)
+                bindFilter(clienteInput, clienteTable, 1);
+            });
+        </script>
     </body>
 </html>
