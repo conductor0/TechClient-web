@@ -36,6 +36,11 @@ public class miscController {
         return "telaPrincipal";
     }
     
+    @GetMapping("usuario/autenticacao")
+    public String autenticacaoTela() {
+        return "autenticacao";
+    }
+    
     @GetMapping("cadastrar/usuario")
     public String cadastrarUsuario(Model model){
         model.addAttribute("usuario", new usuariosEntity());

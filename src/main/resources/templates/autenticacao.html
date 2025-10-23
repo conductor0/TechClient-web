@@ -2,7 +2,7 @@
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Autenticação</title>
-    <link rel="stylesheet" type="text/css" href="css/autenticacao.css" th:href="@{/css/cliente.css}">
+    <link rel="stylesheet" type="text/css" href="css/autenticacao.css" th:href="@{/css/autenticacao.css}">
   </head>
   <body>
     <div class="form">
@@ -14,10 +14,10 @@
         </div>
         <br>
         <div style="text-align: center;">
-          <input class="buttons" type="button" onclick="location.href='cadastroUsuario.html';" value="Entrar" />
+          <input class="buttons" type="button" th:onclick="'window.location.href=\'' + @{/cadastrar/usuario} + '\''" value="Entrar" />
         </div>
         <br>
-        <input class="buttons" type="button" onclick="location.href='telaPrincipal.html';" value="Voltar" />
+        <input class="buttons" type="button" th:onclick="'window.location.href=\'' + @{/navegar/telaPrincipal} + '\''" value="Voltar" />
         </div>
      </form>
   </body>
