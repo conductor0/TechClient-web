@@ -57,7 +57,11 @@ public class miscController {
     
     //placeholder. adicionar funcionalidade no futuro
     @GetMapping("procurar/historico")
-    public String procurarHistorico() {
+    public String procurarHistorico(Model model) {
+        List <vendasEntity> vendas = vendasService.listarVendas();
+        List <clienteEntity> cliente = clienteService.listarClientes();
+        model.addAttribute("vendas", vendas);
+        model.addAttribute("cliente", cliente);
         return "historicoCompras";
     }
 }

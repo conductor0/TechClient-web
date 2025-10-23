@@ -9,6 +9,7 @@ import com.TechShop.techClient.data.clienteEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.TechShop.techClient.repository.ClienteRepository;
+import java.util.List;
 
 @Service
 public class ClienteService {
@@ -19,5 +20,9 @@ public class ClienteService {
         client.setCliente_id(null);
         clienteRepository.save(client);
         return client;
+    }
+    
+    public List<clienteEntity> listarClientes(){
+        return clienteRepository.findAll();
     }
 }

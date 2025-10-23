@@ -15,7 +15,7 @@ public class VendasService {
     @Autowired
     VendasRepository vendasRepository;
     
-    public List<vendasEntity> listarProdutos () {
+    public List<vendasEntity> listarVendas () {
         return vendasRepository.findAll();
     }
 }

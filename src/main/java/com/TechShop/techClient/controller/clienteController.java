@@ -7,6 +7,7 @@ package com.TechShop.techClient.controller;
 
 import com.TechShop.techClient.data.clienteEntity;
 import com.TechShop.techClient.service.ClienteService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,13 @@ public class clienteController {
     public String registrarCliente(@ModelAttribute clienteEntity client) {
         clienteService.registrarCliente(client);
         return "telaPrincipal";
+    }
+    
+    
+    @GetMapping("/listar")
+    public List listarClientes(){
+        List <clienteEntity> clientes = clienteService.listarClientes();
+        return clientes;
     }
     
     @GetMapping("/telaPrincipal")
